@@ -1,0 +1,83 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import "../styles/global.css";
+
+const projects = [
+	{
+		name: "CMS porotyp i implementacja",
+		description: "Default",
+		tech: ["JavaScript", "TypeScript", "Astro", "Strapi"],
+		githubLink: "https://github.com/Krayan321/CMS-kursy.git",
+	},
+	{
+		name: "Sieciowe Systemy Baz Danych",
+		description: "Default",
+		tech: ["Java", "JavaScript"],
+		githubLink: "https://github.com/Krayan321/SSBD.git",
+	},
+	{
+		name: "",
+		description: "Default",
+		tech: ["Java"],
+		githubLink: "https://github.com/Krayan321/ZZPJ.git",
+	},
+	{
+		name: "Prosta aplikacja w JS",
+		description: "Default",
+		tech: ["HTML", "JavaScript", "CSS"],
+		githubLink: "https://github.com/Krayan321/AJI_git.git",
+	},
+	{
+		name: "Implementacja redesignu strony",
+		description: "Default",
+		tech: ["TypeScript", "Astro", "CSS"],
+		githubLink: "https://github.com/Krayan321/SSBD.git",
+	},
+	{
+		name: "Wizualizacja danych",
+		description: "Default",
+		tech: ["JavaScript"],
+		githubLink: "https://github.com/Krayan321/VisualCommunication.git",
+	},
+	{
+		name: "Prosta aplikacja w JS z MongoDB",
+		description: "Default",
+		tech: ["JavaScript", "MongoDB"],
+		githubLink: "https://github.com/Krayan321/AJI_Zad4_shop_api.git",
+	},
+	{
+		name: "Podstawy Processing",
+		description: "Default",
+		tech: ["Processing"],
+		githubLink: "https://github.com/Krayan321/Grafika.git",
+	},
+	{
+		name: "NUI Prototype",
+		description: "Default",
+		tech: ["Figma"],
+		githubLink:
+			"https://www.figma.com/design/xWAInMmnhbDAQtMPvW21z2/NUI?node-id=1-2&t=0ePIbhZRRPpoaxCZ-1",
+	},
+	{
+		name: "Porotyp redesignu interfejsu gry",
+		description: "Default",
+		tech: ["Figma"],
+		githubLink:
+			"https://www.figma.com/proto/NqcwbTLsGipPTtHjXqKhjA/DayZ?node-id=43-308&starting-point-node-id=43%3A308&t=QNr4a4xhmyBOVkKl-1",
+	},
+];
+---
+
+<Header />
+<head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<main class="container mx-auto px-4 py-12">
+	<h1 class="mb-8 text-4xl font-bold">Projects</h1>
+	<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+		{projects.map((project) => <ProjectCard project={project} />)}
+	</div>
+</main>
